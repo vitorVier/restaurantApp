@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
-import logo from '../../assets/logo-restaurant.png'
+import logo from '../../assets/logo-without-bg.png'
 
 export function Header() {
     const navigate = useNavigate()
@@ -49,7 +49,6 @@ export function Header() {
           aria-label="Carrinho de compras"
         >
           <FiShoppingCart size={28} />
-          {/* Se quiser, pode adicionar badge de itens no carrinho aqui */}
         </Link>
       </nav>
     </header>

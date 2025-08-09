@@ -1,4 +1,4 @@
-import logo from '../../assets/logo-restaurant.png'
+import logo from '../../assets/logo.png'
 
 export function About() {
   return (
