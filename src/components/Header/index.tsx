@@ -6,24 +6,52 @@ export function Header() {
     const navigate = useNavigate()
 
     return(
-        <header className="text-xl w-full h-25 text-1xl flex items-center justify-between px-8 mx-auto bg-zinc-900 text-white">
-            <img 
-                src={logo} 
-                alt="logo" 
-                className="h-[70%] object-contain cursor-pointer" 
-                onClick={() => navigate("/")}
-            />
+    <header className="w-full h-20 bg-zinc-950 text-white flex items-center justify-between px-8 mx-auto sticky top-0 z-50 shadow-md">
+      {/* Logo */}
+      <img
+        src={logo}
+        alt="logo"
+        className="h-14 object-contain cursor-pointer"
+        onClick={() => navigate("/")}
+      />
 
-            <nav className="flex gap-5">
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/menu">Menu</Link>
-                
-                <Link to="/cart">
-                    <FiShoppingCart size={26} color="#FEFEFE"></FiShoppingCart>
-                </Link>
-            </nav>
-        </header>
+      {/* Navegação */}
+      <nav className="flex items-center gap-8 text-lg font-medium">
+        <Link
+          to="/"
+          className="hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+        >
+          Home
+        </Link>
+        <Link
+          to="/about"
+          className="hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+        >
+          About
+        </Link>
+        <Link
+          to="/contact"
+          className="hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+        >
+          Contact
+        </Link>
+        <Link
+          to="/menu"
+          className="hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+        >
+          Menu
+        </Link>
+
+        {/* Carrinho */}
+        <Link
+          to="/cart"
+          className="relative hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
+          aria-label="Carrinho de compras"
+        >
+          <FiShoppingCart size={28} />
+          {/* Se quiser, pode adicionar badge de itens no carrinho aqui */}
+        </Link>
+      </nav>
+    </header>
     )
 }

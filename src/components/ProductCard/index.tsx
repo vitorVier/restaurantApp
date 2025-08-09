@@ -24,7 +24,7 @@ export const ProductCard = ({ product }: { product: ProductProps }) => {
         <div className="mt-4 flex justify-between items-center">
           <span className="font-bold">R$ {product.price.toFixed(2)}</span>
           <button 
-            className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600"
+            className="bg-yellow-400 text-gray-900 font-medium px-4 py-2 rounded cursor-pointer hover:bg-yellow-300"
             onClick={() => handleAddCartItem(product)}
           >
             Adicionar
