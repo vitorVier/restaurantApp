@@ -6,7 +6,7 @@ export function Header() {
     const navigate = useNavigate()
 
     return(
-        <header className="w-full h-25 flex items-center justify-between px-5 mx-auto bg-zinc-900 text-white">
+        <header className="text-xl w-full h-25 text-1xl flex items-center justify-between px-8 mx-auto bg-zinc-900 text-white">
             <img 
                 src={logo} 
                 alt="logo" 
@@ -14,14 +14,14 @@ export function Header() {
                 onClick={() => navigate("/")}
             />
 
-            <nav className="flex gap-3">
+            <nav className="flex gap-5">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
                 <Link to="/menu">Menu</Link>
                 
                 <Link to="/cart">
-                    <FiShoppingCart size={24} color="#FEFEFE"></FiShoppingCart>
+                    <FiShoppingCart size={26} color="#FEFEFE"></FiShoppingCart>
                 </Link>
             </nav>
         </header>

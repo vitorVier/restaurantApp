@@ -6,8 +6,9 @@ export function Layout() {
     return (
         <>
             <Header/>
-            <Outlet/>
-            <br /><br />
+            <div className="min-h-screen">
+                <Outlet/>
+            </div>
             <Footer/>
         </>
     )

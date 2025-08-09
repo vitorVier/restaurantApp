@@ -12,7 +12,7 @@ interface ProductProps {
 export const api = async (): Promise<ProductProps[]> => {
   const response = await axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood');
   
-  return response.data.meals.map((meal: any, index: number) => ({
+  return response.data.meals.map((meal: any) => ({
     id: parseInt(meal.idMeal),
     title: meal.strMeal,
     description: `Delicioso prato de ${meal.strMeal.toLowerCase()}`,
