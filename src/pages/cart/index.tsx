@@ -1,7 +1,21 @@
+import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../store/hooks.ts';
+import { addItemCart, removeItemCart } from '../../store/slices/slice.ts';
+import type { ProductProps } from '../../services/api.ts';
 
 export function Cart() {
     const cart = useAppSelector((state) => state.cart.cart);
+    const dispatch = useDispatch();
+
+    function handleAddProductAmount(item: ProductProps) {
+        //@ts-ignore
+        dispatch(addItemCart(item));
+    }
+
+    function handleRemoveProductAmount(item: ProductProps) {
+        //@ts-ignore
+        dispatch(removeItemCart(item));
+    }
 
     return(
         <div className="w-full max-w-7xl mx-auto px-4 py-10">
@@ -36,13 +50,19 @@ export function Cart() {
                         <div className="flex items-center gap-8 ml-4 min-w-[220px] justify-end">
                         {/* Controles quantidade */}
                         <div className="flex items-center gap-3">
-                            <button className="px-3 py-1 rounded-md bg-yellow-400 text-gray-900 font-bold hover:bg-yellow-300 transition cursor-pointer">
+                            <button 
+                                onClick={() => handleRemoveProductAmount(item)} 
+                                className="px-3 py-1 rounded-md bg-yellow-400 text-gray-900 font-bold hover:bg-yellow-300 transition cursor-pointer"
+                            >
                             –
                             </button>
 
-                            <span className="font-medium text-gray-700">0</span>
+                            <span className="font-medium text-gray-700">{item.amount}</span>
                             
-                            <button className="px-3 py-1 rounded-md bg-yellow-400 text-gray-900 font-bold hover:bg-yellow-300 transition cursor-pointer">
+                            <button
+                                onClick={() => handleAddProductAmount(item)} 
+                                className="px-3 py-1 rounded-md bg-yellow-400 text-gray-900 font-bold hover:bg-yellow-300 transition cursor-pointer"
+                            >
                             +
                             </button>
                         </div>

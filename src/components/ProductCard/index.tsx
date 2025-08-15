@@ -1,11 +1,12 @@
 import { useDispatch } from 'react-redux';
-import type { ProductProps } from '../../services/api';
 import { addItemCart } from '../../store/slices/slice.ts';
+import type { ProductProps } from '../../services/api.ts';
 
 export const ProductCard = ({ product }: { product: ProductProps }) => {
   const dispatch = useDispatch()
 
   function handleAddCartItem(product: ProductProps) {
+    //@ts-ignore
     dispatch(addItemCart(product))
   }
 
