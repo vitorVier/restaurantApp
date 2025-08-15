@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 
 export function About() {
@@ -80,11 +81,13 @@ export function About() {
 
         {/* Call to Action */}
         <div className="text-center">
-          <button
-            className="bg-yellow-400 hover:bg-yellow-300 text-zinc-900 font-semibold py-4 px-12 rounded-full shadow-lg transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-500 cursor-pointer"
-          >
-            Faça sua reserva
-          </button>
+          <Link to="/#reserva">
+            <button
+              className="bg-yellow-400 hover:bg-yellow-300 text-zinc-900 font-semibold py-4 px-12 rounded-full shadow-lg transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-500 cursor-pointer"
+            >
+              Faça sua reserva
+            </button>
+          </Link>
         </div>
       </div>
     </div>

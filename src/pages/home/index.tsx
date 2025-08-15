@@ -1,10 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { useProducts } from '../../hoocks/useProducts';
 import { ProductCard } from '../../components/ProductCard';
+import { useEffect } from "react";
 
 export const Home = () => {
   const { products } = useProducts();
+  const location = useLocation();
+
+  // Scroola até a reserva quando a função é chamada em outro componente
+  useEffect(() => {
+    if (location.hash === "#reserva") {
+      setTimeout(() => {
+        const element = document.getElementById("reserva");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 300); // espera 300ms para garantir renderização
+    }
+  }, [location]);
 
   return (
     <div className="font-sans text-gray-800">
