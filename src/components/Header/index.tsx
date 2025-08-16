@@ -3,10 +3,10 @@ import { FiShoppingCart } from "react-icons/fi";
 import logo from '../../assets/logo-without-bg.png'
 
 export function Header() {
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
-    return(
-    <header className="w-full h-20 bg-zinc-950 text-white flex items-center justify-between px-8 mx-auto sticky top-0 z-50 shadow-md">
+  return(
+    <header className="w-full h-20 bg-zinc-950 text-white flex items-center justify-between px-4 md:px-8 mx-auto sticky top-0 z-50 shadow-md">
       {/* Logo */}
       <img
         src={logo}
@@ -52,5 +52,5 @@ export function Header() {
         </Link>
       </nav>
     </header>
-    )
+  )
 }
