@@ -16,9 +16,9 @@ export const api = async (): Promise<ProductProps[]> => {
     id: parseInt(meal.idMeal),
     title: meal.strMeal,
     description: `Delicioso prato de ${meal.strMeal.toLowerCase()}`,
-    price: Math.floor(Math.random() * 50) + 20, // Preços entre 20-70
+    price: Math.floor(Math.random() * 50) + 20,
     image: meal.strMealThumb,
-    category: 'Frutos do Mar' // Ou use meal.strCategory
+    category: 'Frutos do Mar'
   }));
 };
 

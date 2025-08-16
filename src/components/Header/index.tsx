@@ -2,8 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
 import logo from '../../assets/logo-without-bg.png';
+import { useAppSelector } from "../../store/hooks";
 
 export function Header() {
+  const cart = useAppSelector((state) => state.cart.cart);
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -68,6 +70,11 @@ export function Header() {
           aria-label="Carrinho de compras"
           onClick={() => setMenuOpen(false)}
         >
+          {cart.length > 0 && (
+            <span className="absolute -right-3 -top-3 px-2.5 bg-yellow-500 rounded-full w-6 h-6 flex items-center justify-center text-white text-xs">
+              {cart.length}
+            </span>
+          )}
           <FiShoppingCart size={28} />
         </Link>
       </nav>
